@@ -1,0 +1,398 @@
+  /* Mobile */
+
+  .componenteMovil{
+    /* overflow: scroll; */
+    background-color: purple;
+  }
+
+  .contentRoad{
+    height: 100vh;
+  }
+
+  .roadMobile {
+    position: absolute;
+    bottom: 0rem;
+    width: 100%;
+    height: 1900%;
+    background-color: #444;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    transform: perspective(19rem) rotateX(34deg);
+    z-index: 50;
+  }
+  
+  .roadMobile::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 1000%;
+    width: 2rem;
+    animation: animate .8s linear infinite;
+    background: linear-gradient(0deg, #fff 50%, transparent 50%);
+    background-size: 1rem 20rem; 
+  }
+
+  @keyframes animate {
+    0%{
+      background-position: 0 0;
+    }
+    100%{
+      background-position: 0 20rem;
+    }
+  }
+
+
+  .cityMobile {
+    position: absolute;
+    bottom: -28%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: 15rem;
+    background-image: url("../../../../public/skyline.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 8;
+    transition: transform 2s ease, width 2s ease, height 2s ease;
+  }
+
+  .cityMobile:hover {
+    transform: translate(-50%, -32%) scale(1.8); 
+    height: 200px; 
+    width: 200px;
+  }
+
+  .berkeleyMobile{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: font-size 1s ease, top 1s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    animation: shake 0.9s ease-in-out infinite;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .berkeleyMobile:hover,
+.berkeleyMobile.hovered {
+  font-size: 1.7rem;
+  font-weight: bold;
+  animation: shake 0.9s ease-in-out infinite;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -32%) scale(1.8);
+}
+
+
+
+  /* Phone */
+
+  .sectionPhones{
+    width: 100vw;
+    padding: 1rem .8rem;
+  }
+  
+
+.phone {
+    max-width: 40rem; 
+    background-color: #f4f4f4; 
+    border-radius: 2rem; 
+    border-width: .5rem .5rem .5rem;
+    border-color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+    margin: 1.3rem .5rem;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+  }
+  
+  .innerContent {
+    flex: 1;
+    display: flex;
+    position: relative;
+    height: 100vh;
+  }
+  
+  .topPhone{
+    position: absolute;
+    width: 7rem;
+    height: .7rem;
+    background-color: #333;
+    top: -.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+  }
+  
+  .bottomPhone{
+    position: absolute;
+    width: 7rem;
+    height: .4rem;
+    background-color: #333;
+    bottom: .3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+  }
+  
+  .leftSection {
+    flex: 1;
+    padding: 1rem 2rem;
+    background-color: #f8faff; 
+    color: rgb(7, 7, 7);
+    height: 78vh;
+  }
+  
+  .leftSection h1 {
+    margin-bottom: 10px;
+    font-size: 24px; 
+  }
+  
+  .leftSection p {
+    margin-bottom: 5px;
+    font-size: 14px; 
+  }
+  
+  .socialLinks {
+    margin-top: 20px;
+  }
+  
+  .socialLinks a {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(24, 24, 24);
+    text-decoration: none;
+    font-size: 14px; 
+  }
+  
+  .socialLinks a:hover {
+    text-decoration: underline;
+  }
+
+
+  /* rightSection */
+
+.rightSection { 
+    max-width: 40rem; 
+    background-color: #f4f4f4; 
+    border-radius: 2rem; 
+    border-width: .5rem .5rem .5rem;
+    border-color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+  }
+  
+  .rightSection h2 {
+    margin-bottom: 10px;
+    font-size: 18px; /* Tamaño del título */
+  }
+  
+  .rightSection h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 16px; /* Tamaño del título */
+  }
+  
+  .rightSection p {
+    line-height: 1.6;
+  }
+
+  /* Carrito */
+
+  .carrito{
+    position: absolute;
+    bottom: 5rem;
+    left: 45%;
+    transform: translateX(-50%);
+    z-index: 250;
+    width: 7rem;
+    height: 9rem;
+    border-radius: 1rem;
+    animation: shakes 1s ease-in-out infinite;
+}
+
+.carrito::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1rem;
+    height: 4rem;
+    background-color: black;
+    top: -4rem;
+    border: .1rem solid gray;
+    border-radius: 3rem 0 0;
+} 
+
+@keyframes shakes {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(0, -5px); }
+    50% { transform: translate(0, 0); }
+    75% { transform: translate(0, 5px); }
+    100% { transform: translate(0, 0); }
+}
+
+.carritoCuerpo{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 1rem;
+    border: .2rem solid #9f9f9f;
+
+}
+
+.carritoTecho{
+    height: 5.5rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    border-width: .2rem;
+    border-radius: 5px 5px 0 0;
+    border-color: #7d7c7c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.llantas{
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    z-index: 100;
+}
+
+.rueda{
+    width: 2rem;
+    height: 3rem;
+    background-color: rgb(40, 40, 40);
+    border-radius: .9rem;
+    margin: 0 1rem;
+    border: .15rem solid #808080;
+}
+
+
+/* other */
+
+.button {
+    margin: .3rem .4rem .3rem 0;
+    font-size: 1.8rem;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button > a{
+    font-size: .2rem;
+  }
+  
+  .button:hover {
+  transform: scale(1.1);
+  }
+  
+  .logo {
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .logo:hover {
+  transform: scale(1.1);
+  }
+  
+  .linkedin .logo {
+  color: #0077b5; 
+  }
+  
+  .github .logo {
+  color: #e87a3a; 
+  }
+  
+  .whatsapp .logo {
+    color: #54e83a; 
+    }
+
+
+
+@media (min-width: 550px) {
+
+    .phone{
+        margin: 0 .5rem;
+    }
+    
+    .sectionPhones{
+        display: flex;
+        justify-content: space-around;
+        background-color: #e87a3a;
+        width: 100vw;
+        padding: 1rem .8rem;
+
+        
+    }
+
+    .sectionPhones > div{
+        width: 50%;
+    }
+
+    .leftSection{
+        height: 100%;
+        padding: 4rem 1.2rem;
+    }
+    
+}
+
+@media (min-width: 760px) {
+    .sectionPhones{
+        position: absolute;
+        background-color: #ffffff00;
+        top: 0;
+        display: none;
+        justify-content: space-between;
+        width: 100vw;
+        padding: 1rem .8rem;
+        z-index: 100;
+    }
+
+    .phone{
+        margin: 1rem 4rem;
+        width: 400px;
+    }
+
+    .rightSection{
+        margin: 1rem 4rem;
+        width: 100px;
+    }
+    
+
+    .sectionPhones > div{
+        width: 50%;
+    }
+
+    .leftSection{
+        height: 100%;
+        padding: 4rem 1.2rem;
+    }
+    
+}
+
+@media (min-width: 1000px) {
+    
+}

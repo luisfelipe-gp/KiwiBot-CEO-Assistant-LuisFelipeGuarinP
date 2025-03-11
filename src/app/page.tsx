@@ -1,101 +1,165 @@
+"use client"
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import styles from './styles/styles.module.css';
+import "./globals.css";
+import { FaLocationDot } from "react-icons/fa6";
+import Robot from "./_components/Robot";
+import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
+import { FcBriefcase } from "react-icons/fc";
+import OrderButton from "./_components/OrderButton";
+import Mobile from "./_components/_componentMobile/Mobile";
+
+
+/* export default function Home() {
+  const [lineas, setLineas] = useState([]);
+  
+  
+  const carretera = document.querySelector('.carretera');
+    
+    // Generar líneas adicionales si es necesario
+    function agregarLineas() {
+      const lineas = document.querySelector('.lineas');
+      const numLineas = Math.ceil(window.innerHeight / 100) + 1;
+      
+      lineas.innerHTML = '';
+      
+      for(let i = 0; i < numLineas; i++) {
+        const linea = document.createElement('div');
+        linea.className = 'linea';
+        linea.style.top = (i * 100) + 'px';
+        lineas.appendChild(linea);
+      }
+    }
+
+    useEffect(() => {
+      agregarLineas()
+    }, []);
+  
+
+  
+
+
+  
+
+  return (
+    <div className="relative h-[100vh] w-[100vw] bg-sky-200">
+      <div className="carretera">
+        <div className="lineasContainer">
+          
+          <div className="lineas">
+            <div  className="linea top-[0]"></div>
+            <div  className="linea top-[100px]"></div>
+            <div  className="linea top-[200px]"></div>
+            <div  className="linea top-[300px]"></div>
+            <div  className="linea top-[400px]"></div>
+            <div  className="linea top-[500px]"></div>
+          </div>
+        </div>
+      </div>
+      <div className="pasto">
+        
+      </div>
+
+      
+    </div>
+  );
+}
+ */
+
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = () => {
+    setIsHovered(true);
+  };
+
+  const handleLeave = () => {
+    setIsHovered(false);
+  };
+
+
+  return (
+    <div className="relative w-[100vw] h-[100vh] bg-sky-300">
+      {/* <Robot/> */}
+      <div className={`hidden lg:block  ${styles.phone}`}>
+        <div className={styles.innerContent}>
+          <div className={styles.topPhone}>
+          </div>
+          <div className={styles.bottomPhone}>
+          </div>
+          <div className={`${styles.leftSection} overflow-auto`}>
+            <h1 className="text-2xl font-bold text-center">¿Has pedido un CEO assistant?</h1>
+            <h2 className="text-sm opacity-85 mb-1 mt-7">Luis Felipe Guarín Pastrana</h2>
+            <p className="text-sm opacity-85">Ciudad: Neiva, Huila, Colombia</p>
+            <p className="text-sm opacity-85">Teléfono: <a href="https://wa.me/+573164944460">+57 3164944460</a></p>
+            <p className="text-sm opacity-85">Email: luisfelipeguarinp@gmail.com</p>
+            <p className={`mt-8 text-sm opacity-85`}>Administrador de empresas / Desarrollador</p>
+            <p className={`mt-7 text-sm opacity-85`}>Desde startups disruptivas hasta proyectos de gran escala, encuentro en la tecnología la herramienta perfecta para materializar mis ambiciones emprendedoras y creativas.</p>
+            <div className={`text-2xl mt-3 mb-0 flex justify-around items-center`}>
+              <a href="https://www.linkedin.com/in/luisfelipeguarinpastrana-frontend-developer/" className={`${styles.button} ${styles.linkedin}`}><FaLinkedin className={`${styles.logo}`}/> <p className="text-sm opacity-85 font-semibold">Linkedin</p></a>
+              <a href="https://github.com/luisfelipe-gp" className={`${styles.button} ${styles.github}`}><FaGithubSquare className={`${styles.logo}`}/><p className="text-sm opacity-85 font-semibold">Github</p></a>
+              <a href="https://luisfelipeguarinp.netlify.app/" className={`${styles.button} ${styles.github}`}><FcBriefcase className={`${styles.logo}`}/><p className="text-sm opacity-85 font-semibold">Website</p></a>
+            </div>
+            <OrderButton text="Pedir tu Assistant"/>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+      <div className={`hidden lg:block ${styles.rightSection}`}>
+        <div className={`${styles.innerContent} `}>
+          <div className={styles.topPhone}>
+          </div>
+          <div className={styles.bottomPhone}>
+          </div>
+          <div className={`${styles.leftSection} overflow-auto`}>
+            <h2 className={`text-sm font-bold`}>Detalles del pedido:</h2>
+            <p className={`mt-3 text-sm opacity-85`}>
+            ¡Hola! Soy Luis Felipe, de Neiva, apasionado por los videojuegos, 
+            el cine y la tecnología. Comencé en administración de empresas y mi curiosidad
+             me llevó a aprender programación por mi cuenta. Como un rabbit hole llegué a Platzi, donde entré 
+             de lleno al mundo de las startups.
+            </p>
+            <p className={`text-sm opacity-85`}>
+            Eventualmente llegue a Afectus,donde lideré el desarrollo completo de la plataforma. 
+            Durante un año orqueste la transformacion de una empresa especialziada en  
+            administración de publicaciones en redes sociales en una entidad líder en la automatización de procesos de comunicación y la generación de campañas publicitarias y atención al cliente a través de WhatsApp.
+             Llegando a desarrollar productos
+             como la firma de contratos por WhatsApp, algo similar a 
+             Zapsign de Truora. Aunque tuvimos éxito internacional, 
+             no adquirimos clientes lo suficientemente rapido y al cabo de un año cerramos.
+            </p>
+            <p className={`text-sm opacity-85`}>
+              Me encantaria trabajar en kiwibot que mejor cosa que manejar
+             carros a control remoto que entregan atomos. jajaja literalmente 
+             es como un videojuego de adultos. 
+            </p>
+            <h2 className={`text-sm font-bold mt-6`}>Why me?</h2>
+            <p className={`text-sm opacity-85`}>Como CEO assistant I'm gonna make sure I'm gonna get shit done, 
+              but not only that I'll be something better, I'll be your CEO shadow, 
+              I'll anticipate needs before they arise, absorb challenges like a shield, 
+              and multiply your effectiveness while making you look even better. Consider 
+              me your strategic doppelgänger who makes your vision executable.
+            </p>
+            <p className={`text-sm opacity-85 mb-8 inline-block`}>
+              Secure your CEO Shadow today and experience the difference with a FREE 2-week trial!
+               Let me demonstrate how I can transform your executive capacity. 
+               If you're not completely satisfied, return your CEO
+              Shadow with no shipping costs - 100% risk-free guarantee!
+            </p>
+            <OrderButton text="FREE 2-week trial"/>
+          </div>
+        </div>
+      </div>
+      {/* <div className={`hidden lg:block ${styles.berkeley} ${isHovered ? styles.hovered : ''}`}><FaLocationDot/><p>Berkeley</p></div>
+      <div className={`hidden lg:block ${styles.city}`} onMouseOver={handleHover} onMouseOut={handleLeave}></div>
+      <div className={`hidden lg:block ${styles.green}`}>
+      </div>
+      <div className={`hidden lg:block ${styles.road}`}>
+      </div> */}
+      <Mobile/>
     </div>
   );
 }
