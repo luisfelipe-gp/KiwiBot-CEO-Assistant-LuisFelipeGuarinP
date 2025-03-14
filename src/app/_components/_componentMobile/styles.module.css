@@ -334,6 +334,12 @@
 
 @media (min-width: 550px) {
 
+  .componenteMovil{
+    /* overflow: scroll; */
+    padding-bottom: 1rem;
+    background-color: skyblue;
+  }
+
     .phone{
         margin: 0 .5rem;
     }
@@ -341,7 +347,6 @@
     .sectionPhones{
         display: flex;
         justify-content: space-around;
-        background-color: #e87a3a;
         width: 100vw;
         padding: 1rem .8rem;
 
