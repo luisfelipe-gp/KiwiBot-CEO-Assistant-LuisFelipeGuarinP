@@ -1,11 +1,6 @@
 "use client"
-import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import styles from './styles/styles.module.css';
 import "./globals.css";
-import { FaLocationDot } from "react-icons/fa6";
-import Robot from "./_components/Robot";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { FcBriefcase } from "react-icons/fc";
 import OrderButton from "./_components/OrderButton";
@@ -71,7 +66,7 @@ import Mobile from "./_components/_componentMobile/Mobile";
 
 export default function Home() {
 
-  const [isHovered, setIsHovered] = useState(false);
+  /* const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
     setIsHovered(true);
@@ -79,7 +74,7 @@ export default function Home() {
 
   const handleLeave = () => {
     setIsHovered(false);
-  };
+  }; */
 
 
   return (
