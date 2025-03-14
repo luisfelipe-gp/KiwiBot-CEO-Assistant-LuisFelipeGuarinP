@@ -3,6 +3,7 @@
   .componenteMovil{
     /* overflow: scroll; */
     padding-bottom: 1rem;
+    background-color: skyblue;
   }
 
   .contentRoad{
