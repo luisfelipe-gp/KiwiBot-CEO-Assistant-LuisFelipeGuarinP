@@ -84,16 +84,16 @@ export default function Mobile() {
                             es como un videojuego de adultos. 
                             </p>
                             <h2 className={`text-sm font-bold mt-6`}>Why me?</h2>
-                            <p className={`text-sm opacity-85`}>Como CEO assistant I'm gonna make sure I'm gonna get shit done, 
-                            but not only that I'll be something better, I'll be your CEO shadow, 
-                            I'll anticipate needs before they arise, absorb challenges like a shield, 
+                            <p className={`text-sm opacity-85`}>Como CEO assistant I&apos;m gonna make sure I&apos;m gonna get shit done, 
+                            but not only that I&apos;ll be something better, I&apos;ll be your CEO shadow, 
+                            I&apos;ll anticipate needs before they arise, absorb challenges like a shield, 
                             and multiply your effectiveness while making you look even better. Consider 
                             me your strategic doppelgänger who makes your vision executable.
                             </p>
                             <p className={`text-sm opacity-85 mb-8 inline-block`}>
                             Secure your CEO Shadow today and experience the difference with a FREE 2-week trial!
                             Let me demonstrate how I can transform your executive capacity. 
-                            If you're not completely satisfied, return your CEO
+                            If you&apos;re not completely satisfied, return your CEO
                             Shadow with no shipping costs - 100% risk-free guarantee!
                             </p>
                             <OrderButton text="FREE 2-week trial"/>
