@@ -10,6 +10,10 @@
     height: 100vh;
   }
 
+  .grass{
+    background-color: oklch(0.723 0.219 149.579);
+  }
+
   .roadMobile {
     position: absolute;
     bottom: 0rem;

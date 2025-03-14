@@ -25,7 +25,7 @@ export default function Mobile() {
                     <div className={`${styles.berkeleyMobile} ${isHovered ? styles.hovered : ''}`}><FaLocationDot/><p>Berkeley</p></div>
                     <div className={styles.cityMobile} onMouseOver={handleHover} onMouseOut={handleLeave}></div>
                 </div>
-                <div className="h-[56.4vh] bg-green-500  z-10 relative overflow-y-hidden"> 
+                <div className={`${styles.grass} h-[56.4vh] bg-green-500  z-10 relative overflow-y-hidden`}> 
                     <div className={`z-10 relative ${styles.roadMobile}`}>
                     </div>
                 </div>
